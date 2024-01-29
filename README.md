@@ -54,7 +54,7 @@ This command will use the `Makefile` to build Docker images via `docker-compose.
 ## Useful Links
 
 ### Docs
-- Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
+- Docker Documentation: [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
 - Docker Compose: [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
 - NGINX Official Site: [https://www.nginx.com/](https://www.nginx.com/)
 - WordPress Codex: [https://codex.wordpress.org/](https://codex.wordpress.org/)
@@ -63,12 +63,13 @@ This command will use the `Makefile` to build Docker images via `docker-compose.
 
 ### Guides
 - openclassrooms.com: [https://openclassrooms.com/fr/courses/](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
+- docker tutorial: [https://www.docker.com/101-tutorial/](https://www.docker.com/101-tutorial/)
 - grademe.fr: [https://tuto.grademe.fr/inception/](https://tuto.grademe.fr/inception/)
-- vbachele: [https://github.com/vbachele/Inception](https://github.com/vbachele/Inception)
 - Forstman1: [https://github.com/Forstman1/inception-42](https://github.com/Forstman1/inception-42)
+- vbachele: [https://github.com/vbachele/Inception](https://github.com/vbachele/Inception)
 - Theo2lt: [https://github.com/Theo2lt/Inception](https://github.com/Theo2lt/Inception)
 
 ### Videos
-- Running simple webpage with Docker on Localhost: [https://www.youtube.com/watch?v=F2il_Mo5yww](https://www.youtube.com/watch?v=F2il_Mo5yww)
-- Docker Tutorials - NetworkChuck: [https://www.youtube.com/watch?v=dH3DdLy574M&list=PLIhvC56v63IJlnU4k60d0oFIrsbXEivQo](https://www.youtube.com/watch?v=dH3DdLy574M&list=PLIhvC56v63IJlnU4k60d0oFIrsbXEivQo)
 - Docker cocadmin: [https://www.youtube.com/watch?v=cocadmin](https://www.youtube.com/watch?v=SXB6KJ4u5vg&list=PL8SZiccjllt1jz9DsD4MPYbbiGOR_FYHu)
+- Docker Tutorials - NetworkChuck: [https://www.youtube.com/watch?v=dH3DdLy574M&list=PLIhvC56v63IJlnU4k60d0oFIrsbXEivQo](https://www.youtube.com/watch?v=dH3DdLy574M&list=PLIhvC56v63IJlnU4k60d0oFIrsbXEivQo)
+- Running simple webpage with Docker on Localhost: [https://www.youtube.com/watch?v=F2il_Mo5yww](https://www.youtube.com/watch?v=F2il_Mo5yww)
