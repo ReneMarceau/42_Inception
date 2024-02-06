@@ -16,7 +16,9 @@ RUN openssl req \
     -newkey rsa:2048 \
     -keyout /etc/nginx/ssl/inception.key \
     -out /etc/nginx/ssl/inception.crt \
-    -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=login.42.fr/UID=rmarceau"
+    -subj "/C=CA/ST=Quebec/L=Quebec City/O=42 Quebec/OU=Inception/CN=rmarceau.42.fr/UID=rmarceau"
+
+
 
 RUN mkdir -p /var/run/nginx
 

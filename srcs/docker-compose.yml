@@ -1,4 +1,4 @@
-version: 'version 1.0.0'
+version: '3'
 
 services:
   nginx:
@@ -22,7 +22,7 @@ services:
       - mariadb
     env_file: .env
     volumes:
-        - wordpress:/var/www/wordpress
+        - wordpress:/var/www/html
     restart: on-failure
     networks:
       - inception
@@ -40,11 +40,23 @@ services:
       - inception
     expose:
         - 3306
-  
-  networks:
-    inception:
-      driver: bridge
 
-  volumes:
-    wordpress:
-    mariadb:
+networks:
+  inception:
+    driver: bridge
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      type: none
+      device: /var/www/html
+      o: bind
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: none
+      device: /var/lib/mysql
+      o: bind

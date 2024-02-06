@@ -8,12 +8,12 @@ RUN apt-get update -y \
     && apt-get install -y php-mysql \
     && apt-get install -y mariadb-client
 
-RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
+RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www/html
 
-RUN tar -xvf /var/www/wordpress-6.0-fr_FR.tar.gz -C /var/www \
-    && rm /var/www/wordpress-6.0-fr_FR.tar.gz
+RUN tar -xvf /var/www/html/wordpress-6.0-fr_FR.tar.gz -C /var/www/html \
+    && rm /var/www/html/wordpress-6.0-fr_FR.tar.gz
 
-RUN chown -R root:root /var/www/wordpress
+RUN chown -R root:root /var/www/html/wordpress
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
@@ -23,5 +23,6 @@ COPY tools/auto_config.sh /tmp/auto_config.sh
 RUN chmod +x /tmp/auto_config.sh
 
 ENTRYPOINT [ "sh", "/tmp/auto_config.sh" ]
+
 
 # Ensuite pour éviter une erreur qui concerne le PHP, j’ai rajouté une condition qui crée le dossier  /run/php  s’il n’existe pas.
