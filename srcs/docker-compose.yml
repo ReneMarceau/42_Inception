@@ -9,7 +9,7 @@ services:
     env_file: .env
     volumes:
         - wordpress:/var/www/html
-    restart: on-failure
+    restart: on-failure:5
     networks:
       - inception
     ports:
@@ -23,7 +23,7 @@ services:
     env_file: .env
     volumes:
         - wordpress:/var/www/html
-    restart: on-failure
+    restart: on-failure:5
     networks:
       - inception
     expose:
@@ -40,7 +40,7 @@ services:
       - inception
     expose:
         - 3306
-
+  
 networks:
   inception:
     driver: bridge
@@ -50,13 +50,13 @@ volumes:
     name: wordpress
     driver: local
     driver_opts:
-      type: none
-      device: /var/www/html
+      device: /Users/rmarceau/data/wordpress 
       o: bind
+      type: none
   mariadb:
     name: mariadb
     driver: local
     driver_opts:
-      type: none
-      device: /var/lib/mysql
+      device: /Users/rmarceau/data/mariadb
       o: bind
+      type: none

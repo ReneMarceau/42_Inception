@@ -7,7 +7,13 @@ RUN apt-get update -y \
 
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 
+RUN mkdir -p /var/run/mysqld \
+    && chown -R mysql /var/run/mysqld \
+    && chmod 777 /var/run/mysqld
+
+
 COPY tools/init_db.sh /tmp/init_db.sh
 RUN chmod +x /tmp/init_db.sh
 
-CMD ["sh", "/tmp/init_db.sh"]
+
+ENTRYPOINT ["sh", "/tmp/init_db.sh"]
