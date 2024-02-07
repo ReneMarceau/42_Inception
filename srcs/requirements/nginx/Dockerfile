@@ -18,16 +18,14 @@ RUN openssl req \
     -out /etc/nginx/ssl/inception.crt \
     -subj "/C=CA/ST=Quebec/L=Quebec City/O=42 Quebec/OU=Inception/CN=rmarceau.42.fr/UID=rmarceau"
 
-
-
 RUN mkdir -p /var/run/nginx
 
 COPY conf/default.conf /etc/nginx/conf.d/default.conf
 RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
-# RUN mkdir -p /run/nginx
+
 EXPOSE 443
-# lance nginx en premier plan pour que le container ne se stop pas.
+
 CMD [ "nginx", "-g", "daemon off;" ]
 
 

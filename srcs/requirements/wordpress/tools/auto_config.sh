@@ -1,8 +1,17 @@
 #!/bin/bash
 
-sleep 50
+while true; do
+    if nc -z -w 2 mariadb 3306; then
+        echo "MariaDB is up and running"
+        sleep 1
+        break
+    else
+        echo "Waiting for MariaDB to start..."
+        sleep 5
+    fi
+done
 
-if [ -f ./wp-config.php ]; then
+if [ -f /var/www/html/wordpress/wp-config.php ]; then
     echo "wordpress already downloaded"
 else
     wget http://wordpress.org/latest.tar.gz -P /var/www/html
@@ -16,7 +25,8 @@ else
         --dbname=$SQL_DATABASE \
         --dbuser=$SQL_USER \
         --dbpass=$SQL_PASSWORD \
-        --dbhost=mariadb:3306 --path='/var/www/html'
+        --dbhost=mariadb:3306 \
+        --path='/var/www/html'
 
     wp core install --allow-root \
         --url=$DOMAIN_NAME \
@@ -33,13 +43,11 @@ else
         --allow-root \
         --path='/var/www/html'
 
-    # chmod 755 /var/www/html/wordpress/wp-config.php
-    # chmod 755 /var/www/html/wordpress/wp-admin.php/
-
-    mkdir -p /run/php /var/www
-
     echo "Wordpress setuped successfully. Starting PHP-FPM..."
 
-    /usr/sbin/php-fpm7.3 -F
 
 fi
+
+mkdir -p /run/php
+
+/usr/sbin/php-fpm7.3 -F
