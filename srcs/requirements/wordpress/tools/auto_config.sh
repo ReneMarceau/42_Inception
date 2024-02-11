@@ -14,19 +14,13 @@ done
 if [ -f /var/www/html/wordpress/wp-config.php ]; then
     echo "wordpress already downloaded"
 else
-    wget http://wordpress.org/latest.tar.gz -P /var/www/html
-    tar -xvf /var/www/html/latest.tar.gz -C /var/www/html
-    rm -rf /var/www/html/latest.tar.gz
-    chown -R root:root /var/www/html/wordpress
-
     wp core download --allow-root --path='/var/www/html'
 
-    wp config create --allow-root \
-        --dbname=$SQL_DATABASE \
-        --dbuser=$SQL_USER \
-        --dbpass=$SQL_PASSWORD \
-        --dbhost=mariadb:3306 \
-        --path='/var/www/html'
+    sed -i "s/database_name_here/$SQL_DATABASE/g" /var/www/html/wp-config-sample.php
+    sed -i "s/username_here/$SQL_USER/g" /var/www/html/wp-config-sample.php
+    sed -i "s/password_here/$SQL_PASSWORD/g" /var/www/html/wp-config-sample.php
+    sed -i "s/localhost/mariadb:3306/g" /var/www/html/wp-config-sample.php
+    cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 
     wp core install --allow-root \
         --url=$DOMAIN_NAME \
@@ -43,7 +37,7 @@ else
         --allow-root \
         --path='/var/www/html'
 
-    echo "Wordpress setuped successfully. Starting PHP-FPM..."
+    echo "Wordpress has been setup successfully. Starting PHP-FPM..."
 
 
 fi

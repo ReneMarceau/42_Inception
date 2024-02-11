@@ -10,7 +10,8 @@ else
 	echo "FLUSH PRIVILEGES;" >> db1.sql
 	mysql < db1.sql
 
-	mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
 fi
 
-mysqld_safe
+kill $(cat /var/run/mysqld/mysqld.pid)
+
+mysqld

@@ -31,25 +31,25 @@ This command will use the `Makefile` to build Docker images via `docker-compose.
 - [ ] Ensure that your virtual machine is properly set up and Docker is installed.
 
 ### Step 2: Creating Docker Containers
-- [ ] **NGINX Container**: Create a Docker container with NGINX, configured to use TLSv1.2 or TLSv1.3.
-- [ ] **WordPress Container**: Set up WordPress with php-fpm, without NGINX.
-- [ ] **MariaDB Container**: Deploy MariaDB in a separate container.
+- [x] **NGINX Container**: Create a Docker container with NGINX, configured to use TLSv1.2 or TLSv1.3.
+- [x] **WordPress Container**: Set up WordPress with php-fpm, without NGINX.
+- [x] **MariaDB Container**: Deploy MariaDB in a separate container.
 
 ### Step 3: Volumes and Networking
-- [ ] Set up two volumes: one for the WordPress database and one for WordPress files.
-- [ ] Configure a Docker network to link the containers.
+- [x] Set up two volumes: one for the WordPress database and one for WordPress files.
+- [x] Configure a Docker network to link the containers.
 
 ### Step 4: Dockerfiles and docker-compose
-- [ ] Write Dockerfiles for each service and include them in your `docker-compose.yml`.
-- [ ] Configure your Makefile for building the Docker environment.
+- [x] Write Dockerfiles for each service and include them in your `docker-compose.yml`.
+- [x] Configure your Makefile for building the Docker environment.
 
 ### Step 5: Security and Best Practices
-- [ ] Avoid using the `latest` tag in Dockerfiles.
-- [ ] Do not store passwords or sensitive information in Dockerfiles.
-- [ ] Use environment variables for configuration. Store them in a `.env` file in your `srcs` directory.
+- [x] Avoid using the `latest` tag in Dockerfiles.
+- [x] Do not store passwords or sensitive information in Dockerfiles.
+- [x] Use environment variables for configuration. Store them in a `.env` file in your `srcs` directory.
 
 ### Step 6: Domain Configuration
-- [ ] Configure your domain name (e.g., `login.42.fr`) to point to your local IP address.
+- [x] Configure your domain name (e.g., `login.42.fr`) to point to your local IP address.
 
 ## Useful Links
 
